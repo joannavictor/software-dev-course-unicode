@@ -11,8 +11,18 @@ Write a program that takes a string with at least two characters.
 Use charCodeAt to get the Unicode code points of the first two characters.
 Add the two code points together and assign the result to a variable named sumCodePoints.
 Input:
-let inputString = "Hi";
+*/
 
+let inputString = "Hi";
+ 
+let firstCodePoint1 = inputString.charCodeAt(0);  
+let secondCodePoint = inputString.charCodeAt(1);  
+ 
+let sumCodePoints = firstCodePoint1 + secondCodePoint;
+
+console.log("sumCodePoints:", sumCodePoints);  
+
+/*
 Expected Output:
 sumCodePoints: 177 // 'H' = 72, 'i' = 105, 72 + 105 = 177
 
@@ -26,9 +36,18 @@ Write a program that accepts two numeric Unicode code points.
 Use String.fromCharCode to convert each code point to its corresponding character.
 Combine the two characters into a single string and assign it to a variable named combinedString.
 Input:
+
+*/
+
 let codePoint1 = 65;
 let codePoint2 = 66;
 
+// Convert the code points to characters and combine them
+let combinedString = String.fromCharCode(codePoint1) + String.fromCharCode(codePoint2);
+
+console.log("combinedString:", combinedString); // Output: "AB"
+
+/*
 Expected Output:
 combinedString: "AB" // 65 = 'A', 66 = 'B', combined = "AB"
 
@@ -41,14 +60,25 @@ Write a program that takes a string with at least two characters and two specifi
 Use charCodeAt to find the Unicode code points of the characters at the specified indices.
 Calculate the absolute difference between the two code points and assign it to a variable named codePointDifference.
 Input:
-let inputString = "Cat";
+*/
+let inputStrings = "Cat";
 let index1 = 0;
 let index2 = 2;
 
+// Get the Unicode code points of the characters at the specified indices
+let codePoint11 = inputStrings.charCodeAt(index1); // 'C' = 67
+let codePoint21 = inputStrings.charCodeAt(index2); // 't' = 116
+
+// Calculate the absolute difference
+let codePointDifference = Math.abs(codePoint11 - codePoint21);
+
+console.log("codePointDifference:", codePointDifference); // Output: 49
+
+
+/*
 Expected Output:
 codePointDifference: 16 // 'C' = 67, 't' = 116, |67 - 116| = 16
-
-
+// Note:             codePointDifference: 49 and not 16 as previously mentioned in the expected output comment.
 
 Practice Problem #2
 
@@ -82,19 +112,23 @@ Use String.fromCharCode to swap these characters and create a new string: "haunc
 Assign the result to a variable named swappedString.
 
 */
-
 //Starter Code
 // Task 1
-let inputString1 = "Code";
-let firstCodePoint; // Your code here
-let thirdCodePoint; // Your code here
 
+let inputString1 = "Code";
+let firstCodePoint = inputString1.charCodeAt(0);  
+let thirdCodePoint = inputString1.charCodeAt(2);  
 // Task 2
-let wordFromCodePoints; // Your code here
+let wordFromCodePoints = String.fromCharCode(72, 101, 108, 108); ;  
 
 // Task 3
 let inputString2 = "Launch";
-let swappedString; // Your code here
+let firstCharCode = inputString2.charCodeAt(0);      
+let lastCharCode = inputString2.charCodeAt(inputString2.length - 1);
+
+// Extract the middle part of the string
+let middlePart = inputString2.slice(1, inputString2.length - 1); // "aunc"
+let swappedString = String.fromCharCode(lastCharCode) + middlePart + String.fromCharCode(firstCharCode);;  
 
 // Log all results
 console.log({
